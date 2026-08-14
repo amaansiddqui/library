@@ -4,7 +4,7 @@ import { BOOKS } from '../data/booksData';
 const initialState = {
   books: BOOKS,
 };
-
+// Declare BookSlice
 const booksSlice = createSlice({
   name: 'books',
   initialState,
