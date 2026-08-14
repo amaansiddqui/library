@@ -1,10 +1,13 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CATEGORIES, BOOKS } from '../data/booksData';
+import { useDispatch } from 'react-redux';
+import { CATEGORIES } from '../data/booksData';
+import { addBook } from '../redux/booksSlice';
 
 const AddBook = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // Filter out 'All' option for category selection
   const categoryOptions = CATEGORIES.filter((cat) => cat !== 'All');
@@ -82,8 +85,8 @@ const AddBook = () => {
         cover: formData.cover.trim() || 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=600&auto=format&fit=crop',
       };
 
-      // Push to dummy dataset
-      BOOKS.unshift(newBook);
+      // Dispatch Redux action to add book
+      dispatch(addBook(newBook));
 
       // Redirect to Browse Books page
       navigate('/books');
