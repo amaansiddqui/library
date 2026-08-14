@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-
+// Mock data for categories and popular books
 const CATEGORIES = [
   { id: 1, name: 'Fiction', icon: '📖' },
   { id: 2, name: 'Non-Fiction', icon: '🧠' },
@@ -10,6 +10,7 @@ const CATEGORIES = [
   { id: 6, name: 'Biography', icon: '✍️' },
 ];
 
+// Mock data for popular books
 const POPULAR_BOOKS = [
   {
     id: '1',

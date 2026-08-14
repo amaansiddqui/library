@@ -7,7 +7,7 @@ const Navbar = () => {
         <Link to="/" className="navbar-brand fw-bold fs-4">
           📚 Book Library
         </Link>
-
+         {/* Navigation Links */}
         <div className="navbar-nav ms-auto flex-row gap-3">
           <NavLink
             to="/"
@@ -15,6 +15,7 @@ const Navbar = () => {
               `nav-link px-2 ${isActive ? 'active fw-bold text-primary' : ''}`
             }
           >
+            {/* Home Link */}
             Home
           </NavLink>
           <NavLink
@@ -23,6 +24,7 @@ const Navbar = () => {
               `nav-link px-2 ${isActive ? 'active fw-bold text-primary' : ''}`
             }
           >
+            {/* Browse Books Link */}
             Browse Books
           </NavLink>
           <NavLink
