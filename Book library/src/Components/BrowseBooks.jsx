@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useParams, Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { BOOKS, CATEGORIES } from '../data/booksData';
+import { useSelector } from 'react-redux';
+import { CATEGORIES } from '../data/booksData';
 
 const BrowseBooks = () => {
-  const { category: categoryParam } = useParams();
+    const books = useSelector((state) => state.books.books);
+    const { category: categoryParam } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +17,7 @@ const BrowseBooks = () => {
     : 'All';
 
   // Filter books by both category and search query
-  const filteredBooks = BOOKS.filter((book) => {
+    const filteredBooks = books.filter((book) => {
     const matchesCategory =
       activeCategory === 'All' ||
       book.category.toLowerCase() === activeCategory.toLowerCase();

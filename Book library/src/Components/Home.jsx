@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 
+
 const CATEGORIES = [
   { id: 1, name: 'Fiction', icon: '📖' },
   { id: 2, name: 'Non-Fiction', icon: '🧠' },
   { id: 3, name: 'Sci-Fi', icon: '🚀' },
   { id: 4, name: 'Mystery', icon: '🔍' },
-  { id: 5, name: 'Fantasy', icon: '🐉' },
+  { id: 5, name: 'Fantasy', icon: '🪄' },
   { id: 6, name: 'Biography', icon: '✍️' },
 ];
 
@@ -54,7 +55,7 @@ const Home = () => {
       {/* Hero Welcome Section */}
       <section className="p-5 mb-5 bg-primary bg-gradient text-white rounded-3 shadow text-center">
         <h1 className="display-5 fw-bold">Welcome to Book Library</h1>
-        <p className="col-md-8 fs-5 mx-auto opacity-90">
+        <p className="col-md-8 fs-5 mx-auto opacity-80">
           Discover your next great read, explore diverse genres, and manage your personal collection.
         </p>
         <Link to="/books" className="btn btn-light btn-lg fw-semibold mt-2">
