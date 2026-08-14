@@ -1,13 +1,14 @@
 
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { BOOKS } from '../data/booksData';
+import { useSelector } from 'react-redux';
 
 const BookDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const books = useSelector((state) => state.books.books);
 
-  // Find book in mock data by route parameter ID
-  const book = BOOKS.find((b) => b.id === id);
+  // Find book in Redux store by route parameter ID
+  const book = books.find((b) => b.id === id);
 
   // Fallback view if book ID is invalid or not found
   if (!book) {
@@ -54,7 +55,7 @@ const BookDetail = () => {
       {/* 2. Main Book Details Card */}
       <div className="card border-0 shadow-sm p-4 bg-white rounded-3">
         <div className="row g-4 align-items-center">
-          
+
           {/* Cover Image */}
           <div className="col-12 col-md-4 text-center">
             <img
